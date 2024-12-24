@@ -1,39 +1,62 @@
-
 const pagination = document.querySelector(".pagination");
 const posts = document.querySelectorAll(".post");
 const paginationStart = document.querySelector(".pagination-start");
 const paginationEnd = document.querySelector(".pagination-end");
 
-posts.forEach((element, index) => {
-  if (index % 5 === 0) {
-    const newButton = document.createElement("div");
-    newButton.classList.add("pagination-button");
-    if (index / 5 === 0) newButton.classList.add("active-pagination");
-    newButton.id = index / 5;
-    newButton.textContent = index / 5 + 1;
-    newButton.addEventListener("click", () => paginatePosts(index / 5));
+if (!pagination || !paginationStart || !paginationEnd || posts.length === 0) {
+  console.error("Missing necessary elements for pagination initialization.");
+} else {
+  initializePagination();
+}
 
-    pagination.insertBefore(newButton, paginationEnd);
-  }
-  element.style.display = "none";
-});
+function initializePagination() {
+  posts.forEach((post, index) => {
+    if (index % 5 === 0) {
+      createPaginationButton(index / 5);
+    }
+    post.style.display = "none";
+  });
+
+  paginatePosts(0);
+
+  paginationStart.addEventListener("click", () => paginatePosts(0));
+  paginationEnd.addEventListener("click", () =>
+    paginatePosts(getLastPageIndex())
+  );
+}
+
+function createPaginationButton(pageIndex) {
+  const button = document.createElement("div");
+  button.classList.add("pagination-button");
+  button.id = `page-${pageIndex}`;
+  button.textContent = pageIndex + 1;
+
+  if (pageIndex === 0) button.classList.add("active-pagination");
+
+  button.addEventListener("click", () => paginatePosts(pageIndex));
+  pagination.insertBefore(button, paginationEnd);
+}
 
 function paginatePosts(page) {
-  const paginationButton = document.querySelectorAll(".pagination-button");
-  paginationButton.forEach((button) => {
+  document.querySelectorAll(".pagination-button").forEach((button) => {
     button.classList.remove("active-pagination");
   });
 
-  document.getElementById(page).classList.add("active-pagination");
+  const activeButton = document.getElementById(`page-${page}`);
+  if (activeButton) activeButton.classList.add("active-pagination");
 
   posts.forEach((post) => (post.style.display = "none"));
-  for (let i = page * 5; i < Math.min((page + 1) * 5, posts.length); i++) {
+
+  const start = page * 5;
+  const end = Math.min(start + 5, posts.length);
+
+  for (let i = start; i < end; i++) {
     posts[i].style.display = "flex";
   }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-paginatePosts(0);
-paginationStart.addEventListener("click", () => paginatePosts(0));
-paginationEnd.addEventListener("click", () =>
-  paginatePosts(Math.floor(posts.length / 5))
-);
+function getLastPageIndex() {
+  return Math.floor((posts.length - 1) / 5);
+}
