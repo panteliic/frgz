@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <title>Prijavite se</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login">
+      <form>
+        <h1>Prijavite se</h1>
+        <div class="row">
+          <div class="input-group">
+            <label for="first-name">Ime</label>
+            <input type="text" name="" id="first-name" placeholder="Ime" />
+          </div>
+
+          <div class="input-group">
+            <label for="last-name">Prezime</label>
+            <input type="text" name="" id="last-name" placeholder="Prezime" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" name="" id="email" placeholder="Email" />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Lozinka</label>
+          <input type="password" name="" id="password" placeholder="Lozinka" />
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password">Potvrdite lozinku</label>
+          <input
+            type="password"
+            name=""
+            id="password"
+            placeholder="Potvrdite lozinku"
+          />
+        </div>
+
+        <input type="submit" name="" id="submit" value="Potvrdi" />
+        <div class="row login-with-googlefacebook-text">
+            <div class="line"></div>
+            <span class="login-text">Prijavite se na drugi nacin</span>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+          <button class="google-login">
+            <img src="./assets/icons/google-brands-solid.svg" alt="" />
+            <span>Google</span>
+          </button>
+          <button class="facebook-login">
+            <img src="./assets/icons/facebook-f-brands-solid.svg" alt="" />
+            <span>Facebook</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
