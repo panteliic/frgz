@@ -49,3 +49,5 @@ function slider(direction) {
 
   currentImage.src = gallery[indexImage].src;
 }
+
+

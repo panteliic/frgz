@@ -600,11 +600,11 @@ main.vesti .container {
   border: 1px solid var(--white);
   border-radius: 50%;
 }
-.contact-form h1 {
+.contact-form h1, .login form h1 {
   color: var(--white);
   font-size: 3em;
 }
-.contact-form {
+.contact-form ,.login form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -613,11 +613,11 @@ main.vesti .container {
   padding: 1em;
   border-radius: 10px;
 }
-.contact-form label {
+.contact-form label, .login form label{
   font-size: 1.5em;
   color: var(--white);
 }
-.contact-form .row {
+.contact-form .row , .login form .row{
   display: flex; 
   gap: 20px;
 }
@@ -626,11 +626,11 @@ main.vesti .container {
   flex-direction: column;
   gap: 10px;
 }
-.contact .row .input-group {
+.contact .row .input-group , .login form .row .input-group{
   width: 50%;
 }
 
-.contact-form input,.contact-form textarea{
+.contact-form input,.contact-form textarea, .login form input{
   outline: none;
   font-size: 1.1em;
   padding: 0.8em 0.5em;
@@ -644,16 +644,65 @@ main.vesti .container {
   height: 150px;
   resize: vertical;
 }
-.contact-form input:focus {
+.contact-form input:focus, .login form input:focus {
   border-color: var(--purple);
+  transition: all .3s;
 }
-.contact-form input#posalji {
+.contact-form input#posalji, .login form input#submit{
   background-color: var(--mid-purple);
   cursor: pointer;
 }
-.contact-form input#posalji:hover {
+.contact-form input#posalji:hover, .login form input#submit:hover {
   opacity: 0.7;
   transition: all .3s;
+}
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-image: url('./assets/images/hero-bg1.webp');
+}
+.login form {
+  width: 700px;
+  padding: 2em;
+}
+.google-login, .facebook-login{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 3px solid var(--mid-purple);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 1em;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.google-login img, .facebook-login img {
+  width:20px;
+}
+.google-login:hover, .facebook-login:hover{
+  transition:  all .3s;
+  border-color: var(--purple);
+}
+.login-text {
+  text-align: center;
+  font-size: 1.3em;
+  color: white;
+  width: 236.25px;
+}
+.login .login-with-googlefacebook-text {
+  width: 100%;
+  align-items: center;
+}
+.login .line {
+  width: 28%;
+  height: 1px;
+  background-color: var(--white);
 }
 @media screen and (max-width: 1280px) {
   .hero .hero-img {
@@ -758,7 +807,7 @@ main.vesti .container {
   .contact-form{
     width: 60%;
   }
-  .contact-form input {
+  .contact-form in  put {
     font-size: 1em;
   }
 }
@@ -815,6 +864,14 @@ main.vesti .container {
   }
   .contact-form label {
     font-size: 1em;
+  }
+  .login .line {
+    width: 29%;
+  }
+  .login form {
+    padding: 10px;
+    height: 100vh;
+    justify-content:center;
   }
 }
 
