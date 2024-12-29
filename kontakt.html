@@ -113,6 +113,7 @@
               placeholder="Ime"
               required
             />
+            <span class="error first-name-text">Ovo polje je obavezno</span>
           </div>
 
           <div class="input-group">
@@ -124,12 +125,14 @@
               placeholder="Prezime"
               required
             />
+            <span class="error last-name-text">Ovo polje je obavezno</span>
           </div>
         </div>
 
         <div class="input-group">
           <label for="email">E-mail</label>
           <input type="email" name="" id="email" placeholder="Email" required />
+          <span class="error email-text">Ovo polje je obavezno</span>
         </div>
 
         <div class="input-group">
@@ -141,6 +144,7 @@
             placeholder="Lozinka"
             required
           />
+          <span class="error password-text">Ovo polje je obavezno</span>
         </div>
 
         <div class="input-group">
@@ -148,10 +152,11 @@
           <input
             type="password"
             name=""
-            id="password"
+            id="confirm-password"
             placeholder="Potvrdite lozinku"
             required
           />
+          <span class="error confirm-password-text">Ovo polje je obavezno</span>
         </div>
 
         <div class="input-group">
@@ -162,9 +167,10 @@
             placeholder="Poruka....."
             required
           ></textarea>
+          <span class="error message-text">Ovo polje je obavezno</span>
         </div>
 
-        <input type="submit" name="" id="posalji" value="Posalji" />
+        <input type="button" name="" id="posalji" value="Posalji"onclick="validateForm()" />
       </form>
     </main>
     <footer>
@@ -232,5 +238,6 @@
     </footer>
   </body>
 
-  <script src="script.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/validacija.js"></script>
 </html>
