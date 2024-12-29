@@ -15,22 +15,26 @@
           <div class="input-group">
             <label for="first-name">Ime</label>
             <input type="text" name="" id="first-name" placeholder="Ime" />
+            <span class="error first-name-text">Ovo polje je obavezno</span>
           </div>
 
           <div class="input-group">
             <label for="last-name">Prezime</label>
             <input type="text" name="" id="last-name" placeholder="Prezime" />
+            <span class="error last-name-text">Ovo polje je obavezno</span>
           </div>
         </div>
 
         <div class="input-group">
           <label for="email">E-mail</label>
           <input type="email" name="" id="email" placeholder="Email" />
+          <span class="error email-text">Ovo polje je obavezno</span>
         </div>
 
         <div class="input-group">
           <label for="password">Lozinka</label>
           <input type="password" name="" id="password" placeholder="Lozinka" />
+          <span class="error password-text">Ovo polje je obavezno</span>
         </div>
 
         <div class="input-group">
@@ -38,16 +42,23 @@
           <input
             type="password"
             name=""
-            id="password"
+            id="confirm-password"
             placeholder="Potvrdite lozinku"
           />
+          <span class="error confirm-password-text">Ovo polje je obavezno</span>
         </div>
 
-        <input type="submit" name="" id="submit" value="Potvrdi" />
+        <input
+          type="button"
+          name=""
+          id="submit"
+          value="Potvrdi"
+          onclick="validateForm()"
+        />
         <div class="row login-with-googlefacebook-text">
-            <div class="line"></div>
-            <span class="login-text">Prijavite se na drugi nacin</span>
-            <div class="line"></div>
+          <div class="line"></div>
+          <span class="login-text">Prijavite se na drugi nacin</span>
+          <div class="line"></div>
         </div>
         <div class="row">
           <button class="google-login">
@@ -62,4 +73,5 @@
       </form>
     </div>
   </body>
+  <script src="./js/validacija.js"></script>
 </html>

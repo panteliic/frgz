@@ -26,7 +26,7 @@
   box-sizing: border-box;
   max-width: 1920px;
 }
-html{
+html {
   behavior: smooth;
 }
 body {
@@ -302,9 +302,9 @@ footer section {
 .social {
   display: flex;
   align-items: center;
-
   gap: 10px;
   list-style: none;
+  margin-top: 10px;
 }
 .social img {
   width: 30px;
@@ -322,16 +322,23 @@ footer section {
 }
 .newsletter form {
   display: flex;
+  align-items: start;
   width: 100%;
   gap: 10px;
 }
+.newsletter form div {
+  display: flex;
+  flex-direction: column;
+}
 .newsletter form input {
   background: var(--dark-purple);
+  color: var(--white);
   outline: 0;
   border: 3px solid var(--purple);
   border-radius: 10px;
-  padding: 10px;
+  padding: 12px;
   width: 300px;
+  height: 80%;
 }
 .newsletter form .btn {
   font-size: 1em;
@@ -433,40 +440,37 @@ main.vesti .container {
   cursor: pointer;
   transition: all 0.3s;
 }
-.pagination-button:hover{
+.pagination-button:hover {
   border-color: var(--purple);
-
 }
 .pagination-button.active-pagination {
   border-color: var(--purple);
   background-color: var(--purple);
-
 }
 .news-aside {
   width: 30%;
 }
-.news-aside section{
+.news-aside section {
   width: 100%;
   background-color: var(--dark-purple);
   color: var(--white);
-  padding:1.5em 1em ;
+  padding: 1.5em 1em;
   border-radius: 10px;
   margin-bottom: 1em;
 }
 .news-aside section input {
-  padding: .7em .5em;
+  padding: 0.7em 0.5em;
   width: 90%;
   outline: none;
   border: 3px solid var(--mid-purple);
   color: var(--white);
   background-color: transparent;
-  border-radius:5px ;
+  border-radius: 5px;
   font-size: 1.1em;
 }
-.news-aside section input:focus{
-  border-color: var(--purple) ;
+.news-aside section input:focus {
+  border-color: var(--purple);
   transition: all 0.3s;
-
 }
 .news-aside form {
   display: flex;
@@ -475,17 +479,18 @@ main.vesti .container {
 }
 .news-aside form button {
   background-color: var(--purple);
-  padding: .7em;
+  padding: 0.7em;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
   width: 60px;
   height: 60px;
-}.news-aside form button:hover {
-  opacity: 0.7;
-  transition: all .3s;
 }
-.news-aside form button img{ 
+.news-aside form button:hover {
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+.news-aside form button img {
   width: 20px;
   height: 20px;
 }
@@ -497,18 +502,18 @@ main.vesti .container {
 }
 .tags .grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 .tag {
   padding: 1em;
-  background-color:var(--dark-blue);
-  border-radius:10px;
+  background-color: var(--dark-blue);
+  border-radius: 10px;
 }
 .tag:hover {
   background-color: var(--purple);
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .gallery {
   display: grid;
@@ -568,7 +573,7 @@ main.vesti .container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 2em ;
+  margin-bottom: 2em;
 }
 .contact-aside .contact-info {
   background-color: var(--dark-purple);
@@ -600,43 +605,50 @@ main.vesti .container {
   border: 1px solid var(--white);
   border-radius: 50%;
 }
-.contact-form h1, .login form h1 {
+.contact-form h1,
+.login form h1 {
   color: var(--white);
   font-size: 3em;
 }
-.contact-form ,.login form {
+.contact-form,
+.login form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
   width: 70%;
   background-color: var(--dark-purple);
   padding: 1em;
   border-radius: 10px;
 }
-.contact-form label, .login form label{
+.contact-form label,
+.login form label {
   font-size: 1.5em;
   color: var(--white);
 }
-.contact-form .row , .login form .row{
-  display: flex; 
+.contact-form .row,
+.login form .row {
+  display: flex;
   gap: 20px;
 }
-.input-group  {
+.input-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
-.contact .row .input-group , .login form .row .input-group{
+.contact .row .input-group,
+.login form .row .input-group {
   width: 50%;
 }
 
-.contact-form input,.contact-form textarea, .login form input{
+.contact-form input,
+.contact-form textarea,
+.login form input {
   outline: none;
   font-size: 1.1em;
   padding: 0.8em 0.5em;
   width: 100%;
   background-color: transparent;
-  border:  3px solid var(--mid-purple);
+  border: 3px solid var(--mid-purple);
   border-radius: 5px;
   color: var(--white);
 }
@@ -644,17 +656,24 @@ main.vesti .container {
   height: 150px;
   resize: vertical;
 }
-.contact-form input:focus, .login form input:focus {
+.contact-form input:focus,
+.login form input:focus {
   border-color: var(--purple);
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.contact-form input#posalji, .login form input#submit{
+.contact-form input#posalji,
+.login form input#submit {
   background-color: var(--mid-purple);
   cursor: pointer;
 }
-.contact-form input#posalji:hover, .login form input#submit:hover {
+.contact-form input#posalji:hover,
+.login form input#submit:hover {
   opacity: 0.7;
-  transition: all .3s;
+  transition: all 0.3s;
+}
+.error {
+  color: red;
+  visibility: hidden;
 }
 .login {
   width: 100vw;
@@ -663,13 +682,14 @@ main.vesti .container {
   align-items: center;
   justify-content: center;
   display: flex;
-  background-image: url('./assets/images/hero-bg1.webp');
+  background-image: url("./assets/images/hero-bg1.webp");
 }
 .login form {
   width: 700px;
   padding: 2em;
 }
-.google-login, .facebook-login{
+.google-login,
+.facebook-login {
   width: 50%;
   display: flex;
   align-items: center;
@@ -682,11 +702,13 @@ main.vesti .container {
   font-size: 1.2em;
   cursor: pointer;
 }
-.google-login img, .facebook-login img {
-  width:20px;
+.google-login img,
+.facebook-login img {
+  width: 20px;
 }
-.google-login:hover, .facebook-login:hover{
-  transition:  all .3s;
+.google-login:hover,
+.facebook-login:hover {
+  transition: all 0.3s;
   border-color: var(--purple);
 }
 .login-text {
@@ -703,6 +725,28 @@ main.vesti .container {
   width: 28%;
   height: 1px;
   background-color: var(--white);
+}
+table {
+  margin: 1em 0;
+  width: 100%;
+  text-align: center; 
+}
+th,
+td {
+  box-sizing: content-box;
+  padding: 15px;
+  color: white;
+  font-size: 1.5em;
+}
+th {
+  background-color: var(--purple);
+  color: white;
+}
+tr {
+  background-color: var(--dark-blue);
+}
+tr:nth-child(even) {
+  background-color: var(--dark-purple);
 }
 @media screen and (max-width: 1280px) {
   .hero .hero-img {
@@ -793,21 +837,21 @@ main.vesti .container {
   .news-aside {
     width: 100%;
   }
-  .tags .grid{
+  .tags .grid {
     grid-auto-flow: column;
-    overflow: auto  ;
+    overflow: auto;
     padding-bottom: 1em;
   }
   .posts {
     width: 100%;
   }
-  .contact-aside{
+  .contact-aside {
     width: 40%;
   }
-  .contact-form{
+  .contact-form {
     width: 60%;
   }
-  .contact-form in  put {
+  .contact-form in put {
     font-size: 1em;
   }
 }
@@ -871,7 +915,7 @@ main.vesti .container {
   .login form {
     padding: 10px;
     height: 100vh;
-    justify-content:center;
+    justify-content: center;
   }
 }
 
@@ -941,7 +985,7 @@ main.vesti .container {
   .news-aside section {
     padding: 0.3;
   }
-  .post .post-title  {
+  .post .post-title {
     font-size: 1em;
   }
   .post .post-img {
