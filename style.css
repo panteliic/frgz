@@ -196,10 +196,14 @@ main {
   clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 }
 
-.upcoming-match {
+.upcoming-match,
+.rezultati {
   margin-top: 50px;
   text-align: center;
   color: var(--white);
+}
+.rezultati {
+  margin-bottom: 50px;
 }
 .upcoming-match .heading h2 {
   font-size: 3em;
@@ -214,7 +218,8 @@ main {
   grid-template-rows: auto 1fr;
   gap: 10px;
 }
-.mecevi .card {
+.mecevi .card,
+.rezultati .card {
   width: 100%;
   border-radius: 15px;
   border: 5px solid var(--dark-purple);
@@ -224,16 +229,36 @@ main {
 .mecevi .card:nth-child(1) {
   grid-column: 1 / -1;
 }
-.mecevi .card .date-time {
+
+.rezultati .card.final .team {
+  width: 250px;
+}
+.mecevi .card .date-time,
+.rezultati .card .date {
   font-size: 2em;
 }
-.mecevi .card .teams {
+.mecevi .card .teams,
+.rezultati .card .teams {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.mecevi .card .teams .team {
+.mecevi .card .teams .team,
+.rezultati .card .team {
   width: 150px;
+}
+.rezultati .card .result {
+  font-size: 3.5em;
+}
+.rezultati .group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.deo-turnira {
+  font-size: 2.5em;
+  text-align: left;
+  margin: 1em 0;
 }
 .testimonials {
   text-align: center;
@@ -726,28 +751,7 @@ main.vesti .container {
   height: 1px;
   background-color: var(--white);
 }
-table {
-  margin: 1em 0;
-  width: 100%;
-  text-align: center; 
-}
-th,
-td {
-  box-sizing: content-box;
-  padding: 15px;
-  color: white;
-  font-size: 1.5em;
-}
-th {
-  background-color: var(--purple);
-  color: white;
-}
-tr {
-  background-color: var(--dark-blue);
-}
-tr:nth-child(even) {
-  background-color: var(--dark-purple);
-}
+
 @media screen and (max-width: 1280px) {
   .hero .hero-img {
     width: 60%;
@@ -853,6 +857,19 @@ tr:nth-child(even) {
   }
   .contact-form in put {
     font-size: 1em;
+  }
+  .rezultati .group {
+    grid-template-columns: 1fr;
+  }
+
+  .rezultati .card .team, .rezultati .card.final .team{
+    width: 30%;
+  }
+  .rezultati .card .result{
+    font-size: 2em;
+  }
+  .rezultati .card .date{
+    margin-bottom: 10px;
   }
 }
 
